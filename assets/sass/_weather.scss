@@ -8,4 +8,21 @@ body {
         height: 100%;
         object-fit: cover;
     }
+
+    .weather {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+
+        &__title {
+            color: white;
+            letter-spacing: 5px;
+            @include fluid-type(320px, 1920px, 30px, 60px);
+            margin: 0 0 40px 0;
+        }
+    }
+
+
 }
