@@ -1,0 +1,11 @@
+body {
+    .video-bg {
+        position: fixed;
+        z-index: -1;
+        inset: 50% auto auto 50%;
+        translate: -50% -50%;
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+    }
+}
