@@ -319,3 +319,29 @@ body .weather__title {
   font-size: clamp(30px, 24px + 1.875vw, 60px);
   margin: 0 0 40px 0;
 }
+body .weather__form {
+  width: min(100% - 30px, 550px);
+}
+body .weather__city {
+  width: 100%;
+  padding: 10px 25px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  margin: 0 0 30px 0;
+}
+body .weather__city::-webkit-input-placeholder {
+  text-align: left;
+}
+body .weather__city::-moz-placeholder {
+  text-align: left;
+}
+body .weather__city:-ms-input-placeholder {
+  text-align: left;
+}
+body .weather__city::-ms-input-placeholder {
+  text-align: left;
+}
+body .weather__city::placeholder {
+  text-align: left;
+}
