@@ -25,6 +25,10 @@ body {
 
         &__form {
             width: min(100% - 30px, 550px);
+
+            input {
+                background-color: $inpuBoxBg;
+            }
         }
 
         &__city {
@@ -39,7 +43,49 @@ body {
                 text-align: left;
             }
         }
+
+        &__info {
+            display: flex;
+            gap: 25px;
+            color: $infoBoxTextColor;
+            background-color: $infoBoxBg;
+            padding: 20px 30px;
+            border-radius: 15px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__region,
+        &__details {
+            p {
+                margin: 0 0 8px 0;
+
+                &:last-of-type {
+                    margin: 0;
+                }
+            }
+        }
+
+        &__temp {
+            font-size: 60px;
+            display: flex;
+
+            span {
+                font-size: 30px;
+                padding: 6px 0 0 0;
+            }
+        }
+
+        &__error {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: $errorBg;
+            color: $errorFontColor;
+            letter-spacing: 1px;
+        }
     }
+
+
 
 
 }

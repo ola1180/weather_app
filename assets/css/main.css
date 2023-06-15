@@ -322,6 +322,9 @@ body .weather__title {
 body .weather__form {
   width: min(100% - 30px, 550px);
 }
+body .weather__form input {
+  background-color: rgba(255, 251, 251, 0.731);
+}
 body .weather__city {
   width: 100%;
   padding: 10px 25px;
@@ -344,4 +347,43 @@ body .weather__city::-ms-input-placeholder {
 }
 body .weather__city::placeholder {
   text-align: left;
+}
+body .weather__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+  color: #000000;
+  background-color: rgba(255, 251, 251, 0.731);
+  padding: 20px 30px;
+  border-radius: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+body .weather__region p, body .weather__details p {
+  margin: 0 0 8px 0;
+}
+body .weather__region p:last-of-type, body .weather__details p:last-of-type {
+  margin: 0;
+}
+body .weather__temp {
+  font-size: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+body .weather__temp span {
+  font-size: 30px;
+  padding: 6px 0 0 0;
+}
+body .weather__error {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ac2f2f;
+  color: #fff;
+  letter-spacing: 1px;
 }
