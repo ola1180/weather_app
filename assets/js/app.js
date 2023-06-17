@@ -1,6 +1,6 @@
 let weatherForm = document.querySelector('.weather__form')
 let cityInput = document.querySelector('.weather__city')
-let apiUrl = 'http://api.weatherapi.com/v1/current.json?key=a2d9f72be70a4af298b165515231506&aqi=no&q='
+let apiUrl ='//api.weatherapi.com/v1/current.json?key=a2d9f72be70a4af298b165515231506&aqi=no&q='
 let apiDataContainer = document.querySelector('.weather__data')
 let loader = document.querySelector('.weather__loader')
 let gpsButton = document.querySelector('.weather__gps')
