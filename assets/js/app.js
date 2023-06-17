@@ -3,6 +3,7 @@ let cityInput = document.querySelector('.weather__city')
 let apiUrl = 'http://api.weatherapi.com/v1/current.json?key=a2d9f72be70a4af298b165515231506&aqi=no&q='
 let apiDataContainer = document.querySelector('.weather__data')
 let loader = document.querySelector('.weather__loader')
+let gpsButton = document.querySelector('.weather__gps')
 
 weatherForm.addEventListener('submit', (event) => {
 showLoader()
@@ -20,6 +21,8 @@ showLoader()
     })
     .then((dataFromApi)=> {
         // console.log(dataFromApi.current.temp_c)
+        console.log(dataFromApi)
+        cityInput.value = dataFromApi.location.name
         let view = ``
         view += `<div class="weather__info">`
         // county, city, time(region)
@@ -62,4 +65,15 @@ let showLoader = () => {
 
 let hideLoader = () => {
     loader.style.display = 'none'
+}
+
+//GPS
+
+gpsButton.addEventListener('click', (event) => {
+navigator.geolocation.getCurrentPosition(searchPosition)
+})
+
+let searchPosition = (position) => {
+    cityInput.value = `${position.coords.latitude},${position.coords.longitude}`
+    weatherForm.requestSubmit()
 }
