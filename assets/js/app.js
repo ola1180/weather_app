@@ -2,21 +2,22 @@ let weatherForm = document.querySelector('.weather__form')
 let cityInput = document.querySelector('.weather__city')
 let apiUrl = 'http://api.weatherapi.com/v1/current.json?key=a2d9f72be70a4af298b165515231506&aqi=no&q='
 let apiDataContainer = document.querySelector('.weather__data')
+let loader = document.querySelector('.weather__loader')
 
 weatherForm.addEventListener('submit', (event) => {
-
+showLoader()
     let city = cityInput.value
     let fullApiURl = apiUrl + city
 
     fetch(fullApiURl)
     .then(response => {
+        hideLoader()
         if(response.status === 200) {
             return response.json()
         }
-
         throw new Error()
-    })
 
+    })
     .then((dataFromApi)=> {
         // console.log(dataFromApi.current.temp_c)
         let view = ``
@@ -46,9 +47,19 @@ weatherForm.addEventListener('submit', (event) => {
         apiDataContainer.innerHTML = view
     }).catch((error) => showError())
 
+    
+
     event.preventDefault()
 })
 
 let showError = () => {
     apiDataContainer.innerHTML = `<div class='weather__error'>City not found or thera are server problem</div>`
+}
+
+let showLoader = () => {
+    loader.style.display = 'block'
+}
+
+let hideLoader = () => {
+    loader.style.display = 'none'
 }

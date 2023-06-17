@@ -1,91 +1,113 @@
-body {
-    .video-bg {
-        position: fixed;
-        z-index: -1;
-        inset: 50% auto auto 50%;
-        translate: -50% -50%;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+.video-bg {
+    position: fixed;
+    z-index: -1;
+    inset: 50% auto auto 50%;
+    translate: -50% -50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    &__title {
+        color: white;
+        letter-spacing: 5px;
+        @include fluid-type(320px, 1920px, 30px, 60px);
+        margin: 0 0 40px 0;
     }
 
-    .weather {
+    &__form {
+        width: min(100% - 30px, 550px);
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
+        margin: 0 0 30px 0;
+        gap: 5px;
 
-        &__title {
-            color: white;
-            letter-spacing: 5px;
-            @include fluid-type(320px, 1920px, 30px, 60px);
-            margin: 0 0 40px 0;
-        }
-
-        &__form {
-            width: min(100% - 30px, 550px);
-
-            input {
-                background-color: $inpuBoxBg;
-            }
-        }
-
-        &__city {
-            width: 100%;
-            padding: 10px 25px;
-            border: none;
-            outline: none;
-            border-radius: 25px;
-            margin: 0 0 30px 0;
-
-            &::placeholder {
-                text-align: left;
-            }
-        }
-
-        &__info {
-            display: flex;
-            gap: 25px;
-            color: $infoBoxTextColor;
-            background-color: $infoBoxBg;
-            padding: 20px 30px;
-            border-radius: 15px;
-            align-items: center;
-            justify-content: center;
-        }
-
-        &__region,
-        &__details {
-            p {
-                margin: 0 0 8px 0;
-
-                &:last-of-type {
-                    margin: 0;
-                }
-            }
-        }
-
-        &__temp {
-            font-size: 60px;
-            display: flex;
-
-            span {
-                font-size: 30px;
-                padding: 6px 0 0 0;
-            }
-        }
-
-        &__error {
-            padding: 10px;
-            border-radius: 5px;
-            background-color: $errorBg;
-            color: $errorFontColor;
-            letter-spacing: 1px;
+        input {
+            background-color: $inpuBoxBg;
         }
     }
 
+    &__city {
+        width: 100%;
+        padding: 10px 25px;
+        border: none;
+        outline: none;
+        border-radius: 25px;
+
+        &::placeholder {
+            text-align: left;
+        }
+    }
+
+    &__info {
+        display: flex;
+        gap: 25px;
+        color: $infoBoxTextColor;
+        background-color: $infoBoxBg;
+        padding: 20px 30px;
+        border-radius: 15px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__region,
+    &__details {
+        p {
+            margin: 0 0 8px 0;
+
+            &:last-of-type {
+                margin: 0;
+            }
+        }
+    }
+
+    &__temp {
+        font-size: 60px;
+        display: flex;
+
+        span {
+            font-size: 30px;
+            padding: 6px 0 0 0;
+        }
+    }
+
+    &__error {
+        padding: 10px;
+        border-radius: 5px;
+        background-color: $errorBg;
+        color: $errorFontColor;
+        letter-spacing: 1px;
+    }
 
 
+    &__loader {
+        display: none;
+    }
+
+    &__gps {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        flex: 0 0 50px;
+        height: 30px;
+        cursor: pointer;
+
+
+
+
+        img {
+            display: block;
+            width: 100%;
+            filter: brightness(1) invert(.9);
+
+
+        }
+    }
 
 }
